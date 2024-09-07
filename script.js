@@ -32,7 +32,7 @@ function updateContent(date) {
         } else if (date === 'April 2022') {
             contentTitle.innerText = 'April 2022';
             contentDescription.innerText = "We achieved a milestone of 1 million drone flights.";
-            contentImage.src = 'images/360_F_271767114_RKqAc6N9rLHJLUtm3K38HxInaPIurzz8.jpg'; // Change image
+            contentImage.src = 'images/photo-1520539294759-590f20a6b6e2.jpg'; // Change image
         } else if (date === 'April 2023') {
             contentTitle.innerText = 'April 2023';
             contentDescription.innerText = "We launched our sustainable drone initiative.";
