@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.timeline-container {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.timeline-content {
+    margin-bottom: 30px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.timeline-title {
+    font-size: 24px;
+    margin: 10px 0;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-description {
+    font-size: 16px;
+    color: #555;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 70px;
+    padding: 0;
+    height: 10px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #bbb;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.timeline-item:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.timeline-item::before {
+    content: attr(data-date);
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #555;
+    font-size: 14px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item.active {
+    background-color: #007BFF;
+    border: 3px solid #007BFF;
+    transform: scale(1.2); /* Slightly increase size of active button */
+}
+
+.timeline-item.active:not(:last-child)::after {
+    background-color: #007bff;
+}
